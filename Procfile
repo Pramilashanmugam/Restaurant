@@ -1,0 +1,1 @@
+web: gunicorn restaurant_reservation.wsgi
