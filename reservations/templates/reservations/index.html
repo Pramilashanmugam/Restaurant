@@ -1,1 +1,19 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="menu">
+        <h1>Menu</h1>
+        <p>Indian Curry Restaurant Menu</p>
+    </div>
+    <div>
+        <h2 class="offer">Lunch and Dinner Menu</h2>
+        <p class="Timing">Tue. to Sun. 12:00 to 14:30 and 17:30 to 22:00</p>
+        <div>
+            <a href="reservations/templates/reservations/reservation_list.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Book a Table</a>
+            <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Link</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
