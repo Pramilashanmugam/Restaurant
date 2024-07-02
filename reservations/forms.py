@@ -1,14 +1,16 @@
 from django import forms
 from django.contrib import admin
 from .models import Reservation, Table
+from django.utils import timezone
 
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = '__all__'
+        fields = ['name', 'date', 'time', 'guests','phone', 'notes']
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        # displays only the following time slot to book according to restaurant open time
         self.fields['time'].widget = forms.Select(choices=[
             ('12:00', '12:00 PM'), ('12:15', '12:15 PM'), ('12:30', '12:30 PM'), ('12:45', '12:45 PM'),
             ('13:00', '1:00 PM'), ('13:15', '1:15 PM'), ('13:30', '1:30 PM'), ('13:45', '1:45 PM'),
@@ -19,9 +21,10 @@ class ReservationForm(forms.ModelForm):
             ('20:30', '8:30 PM'), ('20:45', '8:45 PM'), ('21:00', '9:00 PM'), ('21:15', '9:15 PM'),
             ('21:30', '9:30 PM'), ('21:45', '9:45 PM'), ('22:00', '10:00 PM')
         ])
+        
+        #allows booking only from current date
+        self.fields['date'].widget = forms.DateInput(attrs={
+            'type': 'date',
+            'min': timezone.now().date().isoformat()
+        })
 
-class ReservationAdmin(admin.ModelAdmin):
-    form = ReservationForm
-
-admin.site.register(Reservation, ReservationAdmin)
-admin.site.register(Table)

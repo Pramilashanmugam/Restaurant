@@ -36,6 +36,7 @@ def validate_reservation_date(value):
 class Reservation(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     table = models.ForeignKey(Table, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
     date = models.DateField(default=timezone.now, validators=[validate_reservation_date])
     time = models.TimeField(validators=[validate_reservation_time])
     guests = models.IntegerField(default=0)

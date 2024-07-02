@@ -14,3 +14,13 @@ class ReservationListView(generic.ListView):
     model = Reservation
     template_name = 'reservation_list.html'
     context_object_name = 'reservation_list'
+
+def make_reservation(request):
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return ('Reservation Successful')
+    else:
+        form = ReservationForm()
+    return render(request, 'reservations/make_reservation.html', {'form': form})
