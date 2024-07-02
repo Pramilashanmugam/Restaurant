@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
-{% load i18n %}
 
 {% block content %}
 <h1>Reservation List</h1>
 <ul>
-    {% for reservation in reservation_list %}
-    <li>{{ reservation }}</li>
+    {% for reservation in reservations %}
+    <li>
+        {{ reservation }}
+        <a href="{% url 'update_reservation' reservation.pk %}">Edit</a>
+        <a href="{% url 'delete_reservation' reservation.pk %}">Delete</a>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}

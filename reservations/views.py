@@ -7,20 +7,48 @@ from .models import Reservation, Table
 from .forms import ReservationForm
 # Create your views here.
 
+# Index view for the homepage
 class Index(TemplateView):
     template_name = 'reservations/index.html'
 
-class ReservationListView(generic.ListView):
-    model = Reservation
-    template_name = 'reservation_list.html'
-    context_object_name = 'reservation_list'
+# View to list reservations for the logged-in user
+@login_required
+def reservation_list(request):
+    reservations = Reservation.objects.filter(user=request.user)
+    return render(request, 'reservations/reservation_list.html', {'reservations': reservations})
 
+# Index view for the homepage
+@login_required
 def make_reservation(request):
     if request.method == 'POST':
         form = ReservationForm(request.POST)
         if form.is_valid():
-            form.save()
-            return ('Reservation Successful')
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.save()
+            return redirect('reservation_list')
     else:
         form = ReservationForm()
     return render(request, 'reservations/make_reservation.html', {'form': form})
+
+# View to update an existing reservation
+@login_required
+def update_reservation(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            form.save()
+            return redirect('reservation_list')
+    else:
+        form = ReservationForm(instance=reservation)
+    return render(request, 'reservations/make_reservation.html', {'form': form})
+
+# View to delete a reservation
+@login_required
+def delete_reservation(request, pk):
+    reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
+    if request.method == 'POST':
+        reservation.delete()
+        return redirect('reservation_list')
+    return render(request, 'reservations/confirm_delete.html', {'reservation': reservation})

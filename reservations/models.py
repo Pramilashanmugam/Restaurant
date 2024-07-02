@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator 
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
@@ -40,7 +41,10 @@ class Reservation(models.Model):
     date = models.DateField(default=timezone.now, validators=[validate_reservation_date])
     time = models.TimeField(validators=[validate_reservation_time])
     guests = models.IntegerField(default=0)
-    phone = models.IntegerField()
+    phone = models.CharField(
+        max_length=20,
+        validators=[RegexValidator(regex=r'^\d+$', message='Phone number must be numeric', code='invalid_phone')]
+    )#CharField with a validator that allows only digits
     notes = models.TextField()
 
     class Meta:
