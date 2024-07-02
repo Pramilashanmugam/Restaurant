@@ -9,6 +9,9 @@
         <a href="{% url 'update_reservation' reservation.pk %}">Edit</a>
         <a href="{% url 'delete_reservation' reservation.pk %}">Delete</a>
     </li>
+    {% empty %}
+            <li>No reservations found.</li>
     {% endfor %}
 </ul>
+<a href="{% url 'make_reservation' %}">Make a Reservation</a>
 {% endblock %}
