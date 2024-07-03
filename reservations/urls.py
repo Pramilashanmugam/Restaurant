@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import * # imports all the functions from views
+from . import views
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='home'),
-    path('reservations/', ReservationListView.as_view(), name='reservation_list'),
-    path('reservations/reserve/', MakeReservationView.as_view(), name='make_reservation'),
-    path('reservations/<int:pk>/update/', UpdateReservationView.as_view(), name='update_reservation'),
-    path('reservations/<int:pk>/delete/', DeleteReservationView.as_view(), name='delete_reservation'),
+    path('', views.Index.as_view(), name='home'),
+    path('reservations/', views.reservation_list, name='reservation_list'),
+    path('reservations/make/', views.make_reservation, name='make_reservation'),
+    path('reservations/update/<int:pk>/', views.update_reservation, name='update_reservation'),
+    path('reservations/delete/<int:pk>/', views.delete_reservation, name='delete_reservation'),
 ]
