@@ -9,6 +9,9 @@ from .forms import ReservationForm
 class Index(TemplateView):
     template_name = 'reservations/index.html'
 
+class Menu(TemplateView):
+    template_name = 'reservations/menu.html'
+
 # View to list reservations for the logged-in user
 @login_required
 def reservation_list(request):
