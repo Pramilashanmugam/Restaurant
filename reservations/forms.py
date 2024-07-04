@@ -6,7 +6,7 @@ from django.utils import timezone
 
 def validate_phone(value):
     if not value.isdigit():
-        raise ValidationError('Phone numbers can only be numbers. Please check your entry')
+        raise ValidationError('Phone numbers can only be numbers. Please check your entry.')
 
 class ReservationForm(forms.ModelForm):
 
