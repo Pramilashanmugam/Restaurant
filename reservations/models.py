@@ -9,7 +9,7 @@ class Table(models.Model):
     capacity = models.IntegerField()
 
     def __str__(self):
-        return f'your table number is {self.number}'
+        return f'Table No: {self.number} can accomodate maximum {self.capacity} guest'
 
 def validate_reservation_time(value):
     allowed_times = [
@@ -47,4 +47,4 @@ class Reservation(models.Model):
         unique_together = ('table', 'date', 'time')
 
     def __str__(self):
-        return f'Dear {self.name}, your booking for {self.guests} guests dated {self.date} at {self.time} is confirmed {self.table}'
+        return f'Dear {self.name}, your booking for {self.guests} guests dated {self.date} at {self.time} is confirmed. Your {self.table}.'
