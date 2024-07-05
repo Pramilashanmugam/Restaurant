@@ -6,8 +6,10 @@
     {% for reservation in reservations %}
     <li>
         {{ reservation }}
-        <a href="{% url 'update_reservation' reservation.pk %}">Edit</a>
-        <a href="{% url 'delete_reservation' reservation.pk %}">Delete</a>
+        <a href="{% url 'update_reservation' reservation.pk %}" class="btn btn-dark btn-sm active" role="button"
+        aria-pressed="true">Edit</a>
+        <a href="{% url 'delete_reservation' reservation.pk %}" class="btn btn-dark btn-sm active" role="button"
+        aria-pressed="true">Delete</a>
     </li>
     {% empty %}
             <li>No reservations found.</li>

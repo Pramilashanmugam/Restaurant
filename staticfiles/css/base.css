@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+}
+
+/* base.css */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/*Header*/
+.logo {
+    height: 8rem;
+    margin: 1px;
+}
+/* Main */
+
+main {
+    flex: 1 0 auto;
+    background-color:wheat;
+    
+}
+/*Footer*/
+
+footer {
+   /* flex-shrink:0;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(224, 220, 220);
+    bottom: 0;*/
+    background-color: #f8f9fa;
+    padding: 1rem;
+    text-align: center;
+}
+
+.social-icon {
+    height: 2rem;
+    margin: 1rem;
+}
