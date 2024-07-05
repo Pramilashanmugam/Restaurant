@@ -1,20 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Reservation List</h1>
+<h1>My Booking History</h1>
 <ul>
     {% for reservation in reservations %}
     <li>
         {{ reservation }}
         <a href="{% url 'update_reservation' reservation.pk %}" class="btn btn-dark btn-sm active" role="button"
-        aria-pressed="true">Edit</a>
+        aria-pressed="true">Update my booking</a>
         <a href="{% url 'delete_reservation' reservation.pk %}" class="btn btn-dark btn-sm active" role="button"
-        aria-pressed="true">Delete</a>
+        aria-pressed="true">Cancel my booking</a>
     </li>
     {% empty %}
             <li>No reservations found.</li>
     {% endfor %}
 </ul>
-<a href="{% url 'make_reservation' %}">Make a Reservation</a>
-<a href="{% url 'home' %}">Go back to homepage</a>
+<a href="{% url 'make_reservation' %}" class="btn btn-info btn-sm active" role="button">Make a Reservation</a>
+<a href="{% url 'home' %}" class="btn btn-info btn-sm active" role="button">Go back to homepage</a>
 {% endblock %}

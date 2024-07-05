@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Confirm Delete</h1>
-<p>Are you sure you want to delete the reservation for {{ reservation }}?</p>
+<h1>Confirm Cancellation</h1>
+<p>Are you sure you want to cancel your reservation? Please confirm.</p>
 <form method="post">
     {% csrf_token %}
-    <button type="submit">Confirm</button>
-    <a href="{% url 'reservation_list' %}">Cancel</a>
+    <button type="submit" class="btn btn-danger btn-sm active">Confirm</button>
+    <a href="{% url 'reservation_list' %}" class="btn btn-success btn-sm active" role="button">Cancel</a>
 </form>
 {% endblock %}
