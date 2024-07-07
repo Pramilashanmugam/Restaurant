@@ -47,4 +47,4 @@ class Reservation(models.Model):
         unique_together = ('table', 'date', 'time')
 
     def __str__(self):
-        return f'Dear {self.name}, your booking for {self.guests} guests dated {self.date} at {self.time} is confirmed. Your {self.table}.'
+        return f'Dear {self.name}, your booking for {self.guests} guests dated {self.date} at {self.time} is confirmed. Your {self.table}., '

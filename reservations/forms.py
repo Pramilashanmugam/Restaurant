@@ -10,12 +10,14 @@ def validate_phone(value):
 
 class ReservationForm(forms.ModelForm):
 
-    phone = forms.CharField(max_length=20, validators=[validate_phone])
+    phone = forms.CharField(max_length=20, validators=[validate_phone], widget=forms.TextInput(attrs={'class': 'form-control'}))
 
     class Meta:
         model = Reservation
         fields = ['table', 'name', 'date', 'time', 'guests', 'phone', 'notes']
         widgets = {
+            'table': forms.Select(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
             'time': forms.Select(choices=[
                 ('12:00', '12:00 PM'), ('12:15', '12:15 PM'), ('12:30', '12:30 PM'), ('12:45', '12:45 PM'),
                 ('13:00', '1:00 PM'), ('13:15', '1:15 PM'), ('13:30', '1:30 PM'), ('13:45', '1:45 PM'),
@@ -25,11 +27,14 @@ class ReservationForm(forms.ModelForm):
                 ('19:30', '7:30 PM'), ('19:45', '7:45 PM'), ('20:00', '8:00 PM'), ('20:15', '8:15 PM'),
                 ('20:30', '8:30 PM'), ('20:45', '8:45 PM'), ('21:00', '9:00 PM'), ('21:15', '9:15 PM'),
                 ('21:30', '9:30 PM'), ('21:45', '9:45 PM'), ('22:00', '10:00 PM')
-            ]),
+            ], attrs={'class': 'form-control'}),
             'date': forms.DateInput(attrs={
                 'type': 'date',
-                'min': timezone.now().date().isoformat()
-            })
+                'min': timezone.now().date().isoformat(),
+                'class': 'form-control'
+            }),
+            'guests': forms.NumberInput(attrs={'class': 'form-control'}),
+            'notes': forms.Textarea(attrs={'class': 'form-control'}),
         }
         
     def clean(self):
