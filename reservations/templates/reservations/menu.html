@@ -2,143 +2,148 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="menu">
-        <h1>Our Menu</h1>
-        <p>Indian Curry Restaurant Menu</p>
-    </div>
-    <div>
-        <h2 class="offer">Lunch and Dinner Menu</h2>
-        <p class="Timing">Tue. to Sun. 12:00 to 14:30 and 17:30 to 22:00</p>
+<div class="container mt-5">
+    <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
         <div>
-            <a href="{% url 'make_reservation' %}" class="btn btn-primary btn-lg active" role="button"
-                aria-pressed="true">Book a Table</a>
-            <a href="{% url 'reservation_list' %}" class="btn btn-primary btn-lg active" role="button"
-                aria-pressed="true">View my Bookings</a>
+            <div class="menu text-center">
+                <h1>Our Restaurant Menu</h1>
+                <p>Life is all about finding new tastes and flavors. Give ours a shot.</p>
+
+            </div>
+            <div class="text-center mt-5">
+                <h2 class="offer">Lunch and Dinner Menu</h2>
+                <p class="Timing">Tue. to Sun. 12:00 to 14:30 and 17:30 to 22:00</p>
+                <div class="mt-4">
+                    <a href="{% url 'make_reservation' %}" class="btn btn-primary btn-lg active" role="button"
+                        aria-pressed="true">Book a Table</a>
+                    <a href="{% url 'reservation_list' %}" class="btn btn-primary btn-lg active" role="button"
+                        aria-pressed="true">View my Bookings</a>
+                </div>
+            </div>
+            <div class="container mt-5">
+                <div class="menu-container">
+                    <!-- Appetizers -->
+                    <div class="appetizer">
+                        <h3 class="text-center">Appetizers</h3>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5>1. Samosa</h5>
+                                <p>Crisp pastry filled with spiced potatoes, peas, and cumin.</p>
+                                <h5>2. Paneer Tikka</h5>
+                                <p>Grilled cubes of cottage cheese marinated in yogurt and spices.</p>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5>3. Chicken Tikka</h5>
+                                <p>Tender pieces of chicken marinated in yogurt and spices, grilled to perfection.</p>
+                                <h5>4. Vegetable Pakora</h5>
+                                <p>Mixed vegetables dipped in chickpea batter and deep-fried.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Courses -->
+                    <div class="main_course mb-4">
+                        <h3 class="text-center mt-5">Main Courses</h3>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5>5. Butter Chicken</h5>
+                                <p>Succulent chicken cooked in a creamy tomato-based sauce with butter and spices.</p>
+                                <h5>6. Palak Paneer</h5>
+                                <p>Cottage cheese cubes simmered in a spiced spinach gravy.</p>
+                                <h5>7. Rogan Josh</h5>
+                                <p>Aromatic lamb curry with a rich, spiced gravy.</p>
+                                <h5>8. Chole Bhature</h5>
+                                <p>Spicy chickpea curry served with fluffy deep-fried bread.</p>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5>9. Vegetable Biryani</h5>
+                                <p>Fragrant basmati rice cooked with mixed vegetables and aromatic spices.</p>
+                                <h5>10. Chicken Biryani</h5>
+                                <p>Flavorful basmati rice dish with tender chicken pieces, cooked with aromatic spices.
+                                </p>
+                                <h5>11. Mutton Biryani</h5>
+                                <p>Flavorful basmati rice dish with tender mutton pieces, cooked with aromatic spices.
+                                </p>
+                                <h5>12. Dal Makhani</h5>
+                                <p>Slow-cooked black lentils in a creamy tomato sauce.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indian Breads -->
+                    <div class="mb-4">
+                        <h3 class="text-center">Indian Breads</h3>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5>13. Naan</h5>
+                                <p>Traditional Indian bread, baked in a tandoor.</p>
+                                <h5>14. Butter Naan</h5>
+                                <p>Naan with butter.</p>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5>15. Garlic Naan</h5>
+                                <p>Naan topped with garlic, butter, and fresh cilantro.</p>
+                                <h5>16. Roti</h5>
+                                <p>Whole wheat flatbread.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Desserts -->
+                    <div class="mb-4">
+                        <h3 class="text-center">Desserts</h3>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5>17. Gulab Jamun</h5>
+                                <p>Soft, round dumplings soaked in sweet syrup.</p>
+                                <h5>18. Rasgulla</h5>
+                                <p>Spongy cheese balls soaked in sugar syrup.</p>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5>19. Kheer</h5>
+                                <p>Indian rice pudding with cardamom, saffron, and nuts.</p>
+                                <h5>20. Fruit Salad</h5>
+                                <p>Diced seasonal fruits served with ice cream.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beverages -->
+                    <div class="mb-4">
+                        <h3 class="text-center">Beverages</h3>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5>21. Masala Chai</h5>
+                                <p>Spiced tea made with milk and a blend of aromatic spices.</p>
+                                <h5>22. Lassi</h5>
+                                <p>Refreshing yogurt-based drink, available in sweet, salty, and mango flavors.</p>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5>23. Mango Lassi</h5>
+                                <p>Sweet yogurt drink blended with ripe mangoes.</p>
+                                <h5>24. Nimbu Pani</h5>
+                                <p>Indian-style lemonade with a hint of cumin.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kids Menu -->
+                    <div>
+                        <h3 class="text-center">Kids Menu</h3>
+                        <div class="row">
+                            <div class="col-md-6 mt-4">
+                                <h5>25. Mini Naan Pizza</h5>
+                                <p>Naan topped with tomato sauce, cheese, and veggies or chicken.</p>
+                            </div>
+                            <div class="col-md-6 mt-4">
+                                <h5>26. Mild Butter Chicken</h5>
+                                <p>A kid-friendly version of the classic butter chicken with less spice.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="container mt-5">
-        <div class="menu-container">
-            <!-- Appetizers -->
-            <div class="appetizer mb-4">
-                <h3>Appetizers</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>1. Samosa</h5>
-                        <p>Crisp pastry filled with spiced potatoes, peas, and cumin.</p>
-                        <h5>2. Paneer Tikka</h5>
-                        <p>Grilled cubes of cottage cheese marinated in yogurt and spices.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>3. Chicken Tikka</h5>
-                        <p>Tender pieces of chicken marinated in yogurt and spices, grilled to perfection.</p>
-                        <h5>4. Vegetable Pakora</h5>
-                        <p>Mixed vegetables dipped in chickpea batter and deep-fried.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Courses -->
-            <div class="main_course mb-4">
-                <h3>Main Courses</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>5. Butter Chicken</h5>
-                        <p>Succulent chicken cooked in a creamy tomato-based sauce with butter and spices.</p>
-                        <h5>6. Palak Paneer</h5>
-                        <p>Cottage cheese cubes simmered in a spiced spinach gravy.</p>
-                        <h5>7. Rogan Josh</h5>
-                        <p>Aromatic lamb curry with a rich, spiced gravy.</p>
-                        <h5>8. Chole Bhature</h5>
-                        <p>Spicy chickpea curry served with fluffy deep-fried bread.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>9. Vegetable Biryani</h5>
-                        <p>Fragrant basmati rice cooked with mixed vegetables and aromatic spices.</p>
-                        <h5>10. Chicken Biryani</h5>
-                        <p>Flavorful basmati rice dish with tender chicken pieces, cooked with aromatic spices.</p>
-                        <h5>11. Mutton Biryani</h5>
-                        <p>Flavorful basmati rice dish with tender mutton pieces, cooked with aromatic spices.</p>
-                        <h5>12. Dal Makhani</h5>
-                        <p>Slow-cooked black lentils in a creamy tomato sauce.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Indian Breads -->
-            <div class="mb-4">
-                <h3>Indian Breads</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>13. Naan</h5>
-                        <p>Traditional Indian bread, baked in a tandoor.</p>
-                        <h5>14. Butter Naan</h5>
-                        <p>Naan with butter.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>15. Garlic Naan</h5>
-                        <p>Naan topped with garlic, butter, and fresh cilantro.</p>
-                        <h5>16. Roti</h5>
-                        <p>Whole wheat flatbread.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Desserts -->
-            <div class="mb-4">
-                <h3>Desserts</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>17. Gulab Jamun</h5>
-                        <p>Soft, round dumplings soaked in sweet syrup.</p>
-                        <h5>18. Rasgulla</h5>
-                        <p>Spongy cheese balls soaked in sugar syrup.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>19. Kheer</h5>
-                        <p>Indian rice pudding with cardamom, saffron, and nuts.</p>
-                        <h5>20. Fruit Salad</h5>
-                        <p>Diced seasonal fruits served with ice cream.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Beverages -->
-            <div class="mb-4">
-                <h3>Beverages</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>21. Masala Chai</h5>
-                        <p>Spiced tea made with milk and a blend of aromatic spices.</p>
-                        <h5>22. Lassi</h5>
-                        <p>Refreshing yogurt-based drink, available in sweet, salty, and mango flavors.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>23. Mango Lassi</h5>
-                        <p>Sweet yogurt drink blended with ripe mangoes.</p>
-                        <h5>24. Nimbu Pani</h5>
-                        <p>Indian-style lemonade with a hint of cumin.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kids Menu -->
-            <div>
-                <h3>Kids Menu</h3>
-                <div class="row">
-                    <div class="col-md-6">
-                        <h5>25. Mini Naan Pizza</h5>
-                        <p>Naan topped with tomato sauce, cheese, and veggies or chicken.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <h5>26. Mild Butter Chicken</h5>
-                        <p>A kid-friendly version of the classic butter chicken with less spice.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 
-{% endblock %}
+        {% endblock %}

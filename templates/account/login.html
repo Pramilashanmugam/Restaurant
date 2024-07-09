@@ -14,18 +14,17 @@
                 <div class="card-header text-center">
                     <h1 class="h3 mb-3 font-weight-normal">{% trans "Sign In" %}</h1>
                     <p>{% blocktrans %}Welcome to Indian Curry. To make Table reservation, please log in. If you have
-                        not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.{%
-                        endblocktrans %}</p>
+                        not created an account yet, then {%endblocktrans %}
+                        <a class="link" href="{{ signup_url }}">{% trans "sign up" %}</a>
+                        {% blocktrans %}first.{% endblocktrans %}
+                    </p>
                 </div>
                 <div class="card-body">
                     <form class="login" method="POST" action="{% url 'account_login' %}">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        {% if redirect_field_value %}
-                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-                        {% endif %}
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success">{% trans "Sign in" %}</button>
+                            <button type="submit" class="btn btn-outline-success btn-md">{% trans "Sign in" %}</button>
                         </div>
                     </form>
                 </div>
