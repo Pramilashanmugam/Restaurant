@@ -6,6 +6,7 @@
 html, body {
     height: 100%;
     margin: 0;
+    font-family: Arila, sans-serif;
 }
 
 body {
@@ -26,9 +27,12 @@ main {
 
 main {
     flex: 1 0 auto;
-    background-color:wheat;
-    
+    background-image: url('../images/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 /*Footer*/
 
 footer {
@@ -48,3 +52,9 @@ footer {
     height: 2rem;
     margin: 1rem;
 }
+
+/* django allauth customizaation */
+
+#id_password_helptext {
+    display:none;
+  }
