@@ -6,16 +6,12 @@
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Arila, sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 body {
     display: flex;
     flex-direction: column;
-}
-
-main {
-    flex: 1;
 }
 
 /*Header*/
@@ -26,11 +22,27 @@ main {
 /* Main */
 
 main {
-    flex: 1 0 auto;
+    flex: 1;
     background-image: url('../images/background.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
+}
+.main-content {
+    background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */
+    padding: 20px;
+    border-radius: 8px;
+    color: #000; /*text color to black for better readability */
+    margin-bottom: 3rem;
+}
+
+.main-content h1, .main-content h2, .main-content h3, .main-content h5 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.main-content p, .main-content li {
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 /*Footer*/
