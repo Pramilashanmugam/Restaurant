@@ -15,10 +15,12 @@ body {
 }
 
 /*Header*/
-.logo {
-    height: 8rem;
+.logo img {
+    width: 100px;
+    height: 1rem;
     margin: 1px;
 }
+
 /* Main */
 
 main {
@@ -26,7 +28,8 @@ main {
     background-image: url('../images/background.webp');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; 
+    background-color: rgba(255, 255, 255, 0.8);  
     
 }
 .main-content {

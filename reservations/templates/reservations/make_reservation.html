@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container mt-5">
+<div class="container mt-5 main-content">
     <h1 class ="text-center">Make a Reservation</h1>
     <form method="post" class="reservation-form">
         {% csrf_token %}
@@ -99,7 +99,7 @@
             </div>
         {% endif %}
         <br>
-        <div class="text-center">
+        <div class="text-center mb-4">
         <button type="submit" class="btn btn-md btn-outline-success">{% trans "Confirm booking" %}</button>
     </div>
     </form>
