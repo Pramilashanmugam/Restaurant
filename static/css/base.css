@@ -3,7 +3,8 @@
 }
 
 /* base.css */
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -24,25 +25,31 @@ body {
 /* Main */
 
 .background {
+    display: flex;
+    flex-direction: column;
     background: url('../images/background.webp') no-repeat center center fixed;
     background-size: cover;
-    background-color: rgba(142, 214, 92, 0);
+
 }
 
 .main-content {
-    background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */
+    background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */    
     padding: 20px;
     border-radius: 8px;
-    color: #000; /*text color to black for better readability */
+    color: #000; /*text color to black for better readability */    
     margin-bottom: 3rem;
     z-index: 1;
 }
 
-.main-content h1, .main-content h2, .main-content h3, .main-content h5 {
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h5 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.main-content p, .main-content li {
+.main-content p,
+.main-content li {
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
@@ -62,5 +69,5 @@ footer {
 /* django allauth customizaation */
 
 #id_password_helptext {
-    display:none;
-  }
+    display: none;
+}
