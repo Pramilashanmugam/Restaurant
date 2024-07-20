@@ -11,9 +11,9 @@
                         {% for reservation in reservations %}
                         <li>
                             {{ reservation }}
-                            <a href="{% url 'update_reservation' reservation.pk %}" class="btn btn-outline-success btn-sm active"
+                            <a href="{% url 'update_reservation' reservation.pk %}" class="btn btn-outline-success btn-sm active mb-1"
                                 role="button" aria-pressed="true">Update</a>
-                            <a href="{% url 'delete_reservation' reservation.pk %}" class="btn btn-outline-danger btn-sm active"
+                            <a href="{% url 'delete_reservation' reservation.pk %}" class="btn btn-outline-danger btn-sm active mb-1"
                                 role="button" aria-pressed="true">Cancel</a>
                         </li>
                         {% empty %}
