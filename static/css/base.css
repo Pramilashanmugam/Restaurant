@@ -60,7 +60,7 @@ footer {
     text-align: center;
 }
 
-.social-icon {
+.social-icon, .icon {
     height: 2rem;
     margin: 1rem;
 }
