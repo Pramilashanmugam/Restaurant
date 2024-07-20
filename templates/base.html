@@ -24,8 +24,8 @@
     {% endblock %}
     <title>Welcome to my Restaurant</title>
     <link rel="preload" href="{% static 'images/spices.webp' %}" as="image">
-  <link rel="preload" href="{% static 'images/dishes.webp' %}" as="image">
-  <link rel="preload" href="{% static 'images/interiors.webp' %}" as="image">
+    <link rel="preload" href="{% static 'images/dishes.webp' %}" as="image">
+    <link rel="preload" href="{% static 'images/interiors.webp' %}" as="image">
 </head>
 
 <body>
@@ -34,11 +34,10 @@
     <main>
         <div class="background">
 
-        {% block content %}
+            {% block content %}
 
-        {% endblock %}
-    </div>
-
+            {% endblock %}
+        </div>
     </main>
 
     {% include 'includes/footer.html' %}
