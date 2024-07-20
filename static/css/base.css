@@ -64,6 +64,9 @@ footer {
     height: 2rem;
     margin: 1rem;
 }
+.icon {
+    text-decoration: none;
+}
 
 /* django allauth customizaation */
 
