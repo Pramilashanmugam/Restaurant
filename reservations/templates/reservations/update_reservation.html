@@ -2,12 +2,12 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container">
+<section class="container">
     <h1>Update Reservation</h1>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Update Reservation</button>
     </form>
-</div>
+</section>
 {% endblock %}

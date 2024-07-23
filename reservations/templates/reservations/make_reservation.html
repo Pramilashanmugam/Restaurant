@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-<div class="container mt-5 main-content">
+<section class="container mt-5 main-content">
     <h1 class ="text-center">Make a Reservation</h1>
     <form method="post" class="reservation-form">
         {% csrf_token %}
@@ -103,5 +103,5 @@
         <button type="submit" class="btn btn-md btn-dark">{% trans "Confirm booking" %}</button>
     </div>
     </form>
-</div>
+</section>
 {% endblock %}
