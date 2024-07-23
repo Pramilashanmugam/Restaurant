@@ -1,4 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Indian Curry](https://8000-pramilashanm-restaurant-35uzo2lk9b8.ws.codeinstitute-ide.net/)
 
 Welcome Pramila Shanmugam,
 

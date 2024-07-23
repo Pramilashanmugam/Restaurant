@@ -16,8 +16,13 @@ body {
 }
 
 /* Main */
+/*carousel captions background*/
+div .carousel-caption {
+    background: rgba(0, 0, 0, 0.3);
+}
 /*carousel captions*/
-.carousel-caption h3, .carousel-caption p {
+.carousel-caption h3,
+.carousel-caption p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     font-weight: 600;
 }
@@ -33,7 +38,7 @@ body {
 
 .main-content {
     /* White background with opacity */
-    background-color: rgba(255, 255, 255, 0.8);    
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
     /*text color to black for better readability */
@@ -69,8 +74,9 @@ footer {
 
 .icon {
     height: 16px;
-    margin:1rem;
+    margin: 1rem;
 }
+
 .footer-container p small a {
     color: black;
     text-decoration: none;
@@ -80,7 +86,4 @@ footer {
 
 #id_password_helptext {
     display: none;
-}
-div.card-header {
-    background-color: rgb(99, 35, 35);
 }
