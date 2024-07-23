@@ -15,12 +15,19 @@ body {
     flex-direction: column;
 }
 
-/* header*/
-
-
-
 /* Main */
+/*carousel captions background*/
+div .carousel-caption {
+    background: rgba(0, 0, 0, 0.3);
+}
+/*carousel captions*/
+.carousel-caption h3,
+.carousel-caption p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+}
 
+/*Background image*/
 .background {
     display: flex;
     flex-direction: column;
@@ -30,12 +37,12 @@ body {
 }
 
 .main-content {
-    background-color: rgba(255, 255, 255, 0.8);
     /* White background with opacity */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 8px;
-    color: #000;
     /*text color to black for better readability */
+    color: #000;
     margin-bottom: 3rem;
     z-index: 1;
 }
@@ -67,14 +74,15 @@ footer {
 
 .icon {
     height: 16px;
-    margin:1rem;
+    margin: 1rem;
 }
-a {
+
+.footer-container p small a {
     color: black;
     text-decoration: none;
 }
 
-/* django allauth customizaation */
+/* django allauth customization */
 
 #id_password_helptext {
     display: none;
