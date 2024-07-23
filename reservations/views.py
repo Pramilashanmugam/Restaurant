@@ -5,18 +5,23 @@ from django.utils.decorators import method_decorator
 from .models import Reservation, Table
 from .forms import ReservationForm
 
+
 # Index view for the homepage
 class Index(TemplateView):
     template_name = 'reservations/index.html'
 
+
 class Menu(TemplateView):
     template_name = 'reservations/menu.html'
+
 
 # View to list reservations for the logged-in user
 @login_required
 def reservation_list(request):
     reservations = Reservation.objects.filter(user=request.user)
-    return render(request, 'reservations/reservation_list.html', {'reservations': reservations})
+    return render(request, 'reservations/reservation_list.html',
+                  {'reservations': reservations})
+
 
 # View to make a new reservation
 @login_required
@@ -30,7 +35,9 @@ def make_reservation(request):
             return redirect('reservation_list')
     else:
         form = ReservationForm()
-    return render(request, 'reservations/make_reservation.html', {'form': form})
+    return render(request, 'reservations/make_reservation.html',
+                  {'form': form})
+
 
 # View to update an existing reservation
 @login_required
@@ -43,7 +50,9 @@ def update_reservation(request, pk):
             return redirect('reservation_list')
     else:
         form = ReservationForm(instance=reservation)
-    return render(request, 'reservations/make_reservation.html', {'form': form})
+    return render(request, 'reservations/make_reservation.html',
+                  {'form': form})
+
 
 # View to delete a reservation
 @login_required
@@ -52,4 +61,5 @@ def delete_reservation(request, pk):
     if request.method == 'POST':
         reservation.delete()
         return redirect('reservation_list')
-    return render(request, 'reservations/confirm_delete.html', {'reservation': reservation})
+    return render(request, 'reservations/confirm_delete.html',
+                  {'reservation': reservation})

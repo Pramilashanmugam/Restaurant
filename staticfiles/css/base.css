@@ -15,6 +15,13 @@ body {
     flex-direction: column;
 }
 
+/* header */
+
+img .logo {
+    width: 100%;
+    height: auto;
+}
+
 /* Main */
 
 /*carousel images*/

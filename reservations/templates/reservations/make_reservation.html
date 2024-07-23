@@ -8,7 +8,7 @@
         {% csrf_token %}
         <div class="row mt-4">
             <div class="form-group col-md-6">
-                <label for="id_table">{% trans "Table" %}</label>
+                <label for="id_table">{% trans "Table" %}*</label>
                 {{ form.table }}
                 {% if form.table.errors %}
                     <div class="alert alert-danger">
@@ -56,7 +56,7 @@
         </div>
         <div class="row">
             <div class="form-group col-md-6">
-                <label for="id_guests">{% trans "Seats" %}</label>
+                <label for="id_guests">{% trans "Seats" %}*</label>
                 {{ form.guests }}
                 {% if form.guests.errors %}
                     <div class="alert alert-danger">
@@ -80,7 +80,7 @@
         </div>
         <div class="row">
             <div class="form-group col-md-12">
-                <label for="id_notes">{% trans "Notes" %}</label>
+                <label for="id_notes">{% trans "Notes" %}*</label>
                 {{ form.notes }}
                 {% if form.notes.errors %}
                     <div class="alert alert-danger">
