@@ -16,10 +16,18 @@ body {
 }
 
 /* Main */
+
+/*carousel images*/
+img .d-block {
+    width: 100%;
+    height: auto;
+}
+
 /*carousel captions background*/
 div .carousel-caption {
     background: rgba(0, 0, 0, 0.3);
 }
+
 /*carousel captions*/
 .carousel-caption h3,
 .carousel-caption p {
@@ -33,7 +41,8 @@ div .carousel-caption {
     flex-direction: column;
     background: url('../images/background.webp') no-repeat center center fixed;
     background-size: cover;
-
+    max-width: 100%;
+    height: auto;
 }
 
 .main-content {
