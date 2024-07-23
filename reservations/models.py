@@ -22,7 +22,8 @@ class Table(models.Model):
         showing the table number and its capacity.
 
         """
-        return f'Table No: {self.number} can accommodate maximum {self.capacity} guests'
+        return (f'Table No: {self.number} can accommodate '
+                f'maximum {self.capacity} guests')
 
 
 def validate_reservation_time(value):
@@ -117,4 +118,6 @@ class Reservation(models.Model):
         The string includes the name, number of guests,
         date, time, and table information.
         """
-        return (f'Dear {self.name}, your booking for {self.guests} guests on {self.date} at {self.time} is confirmed. Your table is {self.table}')
+        return (f'Dear {self.name}, your booking for {self.guests}'
+                f'guests on {self.date} at {self.time} is '
+                f'confirmed. Your table is {self.table}')
