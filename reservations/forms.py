@@ -6,12 +6,26 @@ from django.utils import timezone
 
 
 def validate_phone(value):
+    """
+    Validates that the phone number contains only digits.
+    Args:
+        value (str): The phone number to validate.
+    Raises:
+        ValidationError: If the phone number contains non-digit characters.
+    """
     if not value.isdigit():
         raise ValidationError(
               'Phone numbers can only be numbers. Please check your entry.')
 
 
 def validate_guests(value):
+    """
+    Validates that the number of guests is greater than zero.
+    Args:
+        value (int): The number of guests to validate.
+    Raises:
+        ValidationError: If the number of guests is zero or negative.
+    """
     if value <= 0:
         raise ValidationError(
               'The number of guests must be greater than zero. '
@@ -19,6 +33,17 @@ def validate_guests(value):
 
 
 class ReservationForm(forms.ModelForm):
+    """
+    Form for creating and updating reservations.
+    Fields:
+        table (ForeignKey): The table for the reservation.
+        name (CharField): The name of the person making the reservation.
+        date (DateField): Only from current date is accepted.
+        time (CharField): Can choose only from the given time slots.
+        guests (IntegerField): The number of guests.
+        phone (CharField): The phone number of the user making the reservation.
+        notes (TextField): Additional notes for the reservation.
+    """
 
     phone = forms.CharField(max_length=20, validators=[validate_phone],
                             widget=forms.TextInput(
@@ -59,6 +84,14 @@ class ReservationForm(forms.ModelForm):
         }
 
     def clean(self):
+        """
+        Custom validation for the form.
+        Ensures that the number of guests does not exceed the table's capacity.
+        Returns:
+            dict: The cleaned data.
+        Raises:
+            ValidationError: If the no of guests exceeds the table's capacity.
+        """
         cleaned_data = super().clean()
         table = cleaned_data.get('table')
         guests = cleaned_data.get('guests')
