@@ -32,6 +32,20 @@ def validate_guests(value):
               'Please enter a valid number.')
 
 
+def validate_name(value):
+    """
+    Validates that the name contains only alphabetic characters.
+    Args:
+        value (str): The name to validate.
+    Raises:
+        ValidationError: If the name contains non-alphabetic characters.
+    """
+    if not value.isalpha():
+        raise ValidationError(
+            'Name can only contain alphabetic characters. Please check your entry.'
+        )
+
+
 class ReservationForm(forms.ModelForm):
     """
     Form for creating and updating reservations.
@@ -51,6 +65,15 @@ class ReservationForm(forms.ModelForm):
     guests = forms.IntegerField(validators=[validate_guests],
                                 widget=forms.NumberInput(
                                     attrs={'class': 'form-control'}))
+    name = forms.CharField(max_length=100, validators=[validate_name],
+                           widget=forms.TextInput(
+                               attrs={'class': 'form-control'}))
+    notes = forms.CharField(
+        max_length=1000,
+        widget=forms.Textarea(
+            attrs={'class': 'form-control', 'maxlength': 1000}
+        )
+    )
 
     class Meta:
         model = Reservation
@@ -90,7 +113,7 @@ class ReservationForm(forms.ModelForm):
         Returns:
             dict: The cleaned data.
         Raises:
-            ValidationError: If the no of guests exceeds the table's capacity.
+            ValidationError: If the number of guests exceeds the table's capacity.
         """
         cleaned_data = super().clean()
         table = cleaned_data.get('table')
