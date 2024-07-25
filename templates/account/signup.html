@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <p class="text-center">
-                        {% blocktranslate %}Already have an account? Then please <a href="{{ login_url }}">sign
+                        {% blocktranslate %}Already have an account? Then please <a href="{{ login_url }}" class="link-dark">sign
                             in</a>.{% endblocktranslate %}
                     </p>
                     {% if not SOCIALACCOUNT_ONLY %}
@@ -39,7 +39,7 @@
                             {{ redirect_field }}
                         </div>
                         <div class="text-center">
-                            <button type="submit" class="btn btn-outline-primary btn-md">
+                            <button type="submit" class="btn btn-outline-dark btn-md">
                                 {% trans "Sign Up" %}
                             </button>
                         </div>

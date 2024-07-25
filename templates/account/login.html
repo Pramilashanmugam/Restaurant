@@ -13,7 +13,7 @@
                     <h1 class="h3 mb-3 font-weight-normal">{% trans "Sign In" %}</h1>
                     <p>{% blocktrans %}Welcome to Indian Curry. To make Table reservation, please log in. If you have
                         not created an account yet, then {% endblocktrans %}
-                        <a class="link" href="{{ signup_url }}">sign up</a>
+                        <a class="link link-dark" href="{{ signup_url }}">sign up</a>
                         {% blocktrans %}first.{% endblocktrans %}
                     </p>
                 </div>
@@ -25,7 +25,7 @@
                         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                         {% endif %}
                         <div class="text-center">
-                            <button type="submit" class="btn btn-success">{% trans "Sign in" %}</button>
+                            <button type="submit" class="btn btn-outline-dark">{% trans "Sign in" %}</button>
                         </div>
                     </form>
                 </div>
