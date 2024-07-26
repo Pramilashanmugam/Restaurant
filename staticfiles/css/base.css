@@ -15,9 +15,6 @@ body {
     flex-direction: column;
 }
 
-/* header */
-
-
 /* Main */
 
 /*carousel images*/
@@ -89,6 +86,7 @@ footer {
     margin: 1rem;
 }
 
+/* anchor element in footer color change */
 .footer-container p small a {
     color: black;
     text-decoration: none;
