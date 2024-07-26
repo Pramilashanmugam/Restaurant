@@ -17,6 +17,19 @@ The website consists of a Menu page, with the list of food items available and a
     * [Structure / Design Choices](#structure--design-choices)
     * [Skeleton / Wireframes](#skeleton--wireframes)
     * [Surface](#surface)
+* [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Future Features](#future-features)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Bugs](#bugs)
+* [Deployment](#deployment)
+    * [Forking the GitHub Repository](#forking-the-github-repository)
+    * [Creating a Local Clone](#creating-a-local-clone)
+* [Credits](#credits)
+* [Acknowledgements](#acknowledgements)
+
+[Back To Top](#INDIAN-CURRY)
 
 
 ____
@@ -228,4 +241,144 @@ Wireframes were first sketched with pen and paper. This method helped me with br
 
 </details>
 
+___
 
+### Surface
+
+This section defines the visual language of the website.
+
+* Colour Scheme
+
+Mostly White and Black colour palette was chosen for this website text and background. The logo has a wine colour palette. The other colourful colours like red, green, yellow was used on buttons.
+
+![White and Black colour palette](documentation/colorpalette.png)
+
+* Typography
+
+Arial and sans-serif fonts were used throughout the website.
+
+* Icons
+
+[uxwing](https://uxwing.com/) social media, map, phone and email icons were used for the Footer.  They are used as interactive links and have an aria-label which gives the relevant information to screen readers to read out to the users.
+
+[Back To Top](#table-of-contents)
+
+____
+
+## Features
+
+### Existing Features
+
+**Header & Navigation**
+
+Featured on all pages, the fully responsive header includes:
+
+* A link on the Logo which brings the user to the home page.
+* A hamburger button on mobile which opens up a navigation list with links to the Home, Menu, Register and Login pages. This helps reduce the clutter on the header by keeping the page links neatly stowed away until the user navigates to the hamburger button.
+* Links to the Home, Menu, Register and Login pages on tablet and desktop which help the user to navigate easily from page to page, without having to revert back to the previous page via the back button. 
+* The last two links change depending on the user's status. If the user is not logged, in the Register and Login links are displayed, while the Profile and Logout links are displayed if the user is logged in.
+
+<details>
+
+<summary>Click to view screenshots of Navigation features</summary>
+
+        Navigation closed on mobile  
+![Header on mobile closed](documentation/navigationclosed-mob.png)
+
+        Navigation open on mobile
+![Header on mobile open](documentation/navmobview.png)
+
+        Navigation open for logged user mobile
+![Header on mobile logged user](documentation/navloggedin-mob.png)
+
+        Navigation on tablets & desktops
+![Header on tablet](documentation/navloggedout.png)
+
+        Navigation for logged user on tablets & desktops
+![Header on tablet logged user](documentation/navloggedin-desk.png)
+
+</details>
+
+**Footer**
+
+Featured on all pages, the responsive footer is valuable to the users as it encourages them to get in touch via phone or email if they prefer that method of contact and it also allows the users to keep connected via social media. It includes:
+* The business's address and a map location is given to reach us.
+* Contact details are links which direct the user to the relevant apps. On mobile, the telephone number when clicked will bring up a call feature, while the email address will open up an email app on tablet or desktop as well.
+* Social links open in a new tab so that users are not directed away from the website. 
+* A Simple Copyright disclaimer shown at the bottom of the footer.
+* All links have a pointer cursor to help users identify them as links.
+
+<details>
+
+<summary>Click to view screenshots of Footer features</summary>
+
+        Footer on mobile 
+![Footer on mobile](documentation/mobfooter.png)
+
+        Footer on tablet/desktop 
+![Footer on tablet/desktop](documentation/desktopfooter.png)
+
+</details>
+
+<br>
+
+**Landing Page**
+
+The Home page hero on the Landing page takes up more than half the viewport of any screen size. It includes a carousel with three images of indian dishes, spices and the restaurant interiors. A slogan which captures the essence of indian food is included on each image.  It also acts a Call to Action(CTA) as it includes two buttons inviting the user to book a Table and view the Menu.  The button has a hover and focus effect as demonstrated below. 
+
+<details>
+
+<summary>Click to view screenshots Landing page features</summary>
+
+        Landing page on mobile
+![Landing page on mobile](documentation/hero-mob.png)
+
+        Landing page on tablet/desktop
+![Landing page on tablet/desktop](documentation/hero-desktop.png)
+
+</details>
+
+<br>
+
+**Home Page Content**
+
+The Home page displays further content which gives the user a brief story of the founder and why to choose to open this restaurant. It includes:
+* A short story for establishing this restaurant.
+* About the person from whom the founder got inspired in cooking.
+* It describes the authentic taste of indian kitchen and spices.
+
+<details>
+
+<summary>Click to view screenshots of other Home page content</summary>
+
+        Home content on mobile
+![Home articles on mobile](documentation/content-mob.png)
+
+        Home content on tablet/desktop
+![Home articles on tablet](documentation/content-desktop.png)
+
+</details>
+
+<br>
+
+**Menu Page**
+
+The responsive Menu page is reachable via the Menu link in the navigation bar as well by clicking the 
+"Our Menu" button on all three images on the carousel on Home page. It includes the following:
+* More detailed information on the restaurant opening timing for Lunch and Dinner.
+* The Menu is very well categorised as Appetizers, Main Course, Indian Breads, Desserts, Beverages and Kids Menu, which enhances the customer experience.
+* The background and text are very well styled for a better visual experience.
+
+<details>
+
+<summary>Click to view screenshots of the Menu page</summary>
+
+        Menu page on mobile
+![Menu page on mobile](documentation/menucontent-mob.png)
+
+        Menu page on tablet/Desktop
+![Menu page on tablet/desktop](documentation/menucontent-desktop.png)
+
+</details>
+
+<br>
