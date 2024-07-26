@@ -119,5 +119,5 @@ class Reservation(models.Model):
         date, time, and table information.
         """
         return (f'Dear {self.name}, your booking for {self.guests}'
-                f'guests on {self.date} at {self.time} is '
+                f' guests on {self.date} at {self.time} is '
                 f'confirmed. Your table is {self.table}')
