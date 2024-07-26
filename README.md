@@ -160,3 +160,72 @@ Two custom models have been implemented in this project.
     - notes
 
 </details>
+
+
+___
+
+### Skeleton / Wireframes
+
+Wireframes were first sketched with pen and paper. This method helped me with brainstorming, deciding the most essential parts for the website and getting a feel for the website as a whole. They were then wireframed in [Balsamiq](https://balsamiq.com/wireframes/) to give a closer indication of the design.  Through the design phase some elements were changed to allow for a better user experience.
+
+<details>
+
+<summary>Balsamiq Wireframes</summary>
+
+**Home Page**
+
+![Home mobile](documentation/homepage-wiremob.png)
+
+![Home desktop](documentation/homepage-wiredesktop.png)
+
+**Menu Page**
+
+![Menu mobile](documentation/menu-wiremob.png)
+
+![Menu desktop](documentation/menupage-wiredesktop.png)
+
+**Make a Reservation**
+
+![Make a reservation mobile](documentation/makeareservation-mob.png)
+
+![Make a reservation desktop](documentation/makeareservation-desktop.png)
+
+**My Booking History**
+
+![My Booking History mobile](documentation/viewbooking-wiremob.png)
+
+![My Booking History desktop](documentation/viewbooking-wiredesktop.png)
+
+**Cancel Confirmation**
+
+![Cancel Confirmation mobile](documentation/cancelconfimation-mob.png)
+
+![Cancel Confirmation desktop](documentation/cancelconfirmation-desktop.png)
+
+**Update a Reservation**
+
+![Update a reservation mobile](documentation/makeareservation-mob.png)
+
+![Update a reservation desktop](documentation/makeareservation-desktop.png)
+
+**Signup**
+
+![Signup mobile](documentation/signup-wiremob.png)
+
+![Signup desktop](documentation/signup-wiredesktop.png)
+
+**Signin**
+
+![Signin mobile](documentation/signin-wiremob.png)
+
+![Signin desktop](documentation/signin-wiredesktop.png)
+
+**SignOut**
+
+![SignOut mobile](documentation/signout-wiremob.png)
+
+![SignOut desktop](documentation/signout-wiredesktop.png)
+
+</details>
+
+
