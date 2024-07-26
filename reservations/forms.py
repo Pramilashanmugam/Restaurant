@@ -42,7 +42,8 @@ def validate_name(value):
     """
     if not value.isalpha():
         raise ValidationError(
-            'Name can only contain alphabetic characters. Please check your entry.'
+            'Name can only contain alphabetic characters. '
+            'Please check your entry.'
         )
 
 
@@ -113,7 +114,8 @@ class ReservationForm(forms.ModelForm):
         Returns:
             dict: The cleaned data.
         Raises:
-            ValidationError: If the number of guests exceeds the table's capacity.
+            ValidationError: If the number of guests exceeds the table's
+            capacity.
         """
         cleaned_data = super().clean()
         table = cleaned_data.get('table')
