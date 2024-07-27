@@ -464,7 +464,7 @@ The website gives the user the functionality to book/reserve a table via the boo
 * The Name Field accepts only alphabets and if any other character entered, a message asking user to enter only alphabets appears. 
 * The Seat Field accepts only numbers > 0, negative numbers are not accepted.
 * The Phone Field accepts only numbers, if invalid input received a error message will guide user to enter only number.
-* The Date field only accepts current and future dates upto 6 months from the current date.
+* The Date field only accepts current and future dates upto 6 months from the current date. Mondays are not accepted as restaurant is closed on mondays.
 * The Time field lists the time slots according the restaurant open time and is also validated along with the Date field so that it doesn't accept double bookings.
 * The Note Field can accept a maximum of 1000 character.
 * If the information entered does not pass validation, the Submit button directs the user back to the form.  Error messages point out the fields not passed and an error alert is displayed on the bottom of each field. 
@@ -475,26 +475,109 @@ The website gives the user the functionality to book/reserve a table via the boo
 
 <summary>Click to view screenshots</summary>
 
-        No profile information notice with hovered on link
-![Notice for no profile information](documentation/appts-noprofile_tablet.png)
+        When fields left empty, it notices a message with hovered on link
+![Notice for blank field](documentation/blankfields.png)
 
-        Appointment Create Page
-![Appointment Create page with form](documentation/appt-create_tablet.png)
+        Booking a table with valid datas
+![Fields with valid data](documentation/valid-datas.png)
 
-        Datefield Validation - at least 24hrs 
-![Datefield error choose a date and time at least 24hrs from now](documentation/datetime_validation.png)
+        TableSeat validation - seat number should not be more than the capacity of the table
+![Table Seat capacity validation](documentation/tableseat.png)
 
-        Datefield Validation - only Tue - Sat
-![Datefield error open only Tuesday to Saturday](documentation/datetime_validation-sunmon.png)
+        Error message on name field if non alphabet character enter
+![Fields with valid data](documentation/nameinvalid.png)
+
+        Datefield Validation - only monday
+![Datefield restricted on monday](documentation/mondaydate.png)
 
         DateTime Validation - already booked
-![DateTime error this slot is already booked](documentation/time_validation.png)
+![DateTime error this slot is already booked](documentation/reservationexists.png)
 
-        Appointment create - error alert
-![Error alert displayed if Appointment is not created](documentation/unsuccessful-appt_mobile.png)
+        Seat Validation - number should not be 0 and negative
+![Seat number cannot be 0 or negative](documentation/seatnumber.png)
 
-        Appointment create - success alert
-![Success alert displayed if Appointment is created](documentation/successful-appt_mobile.png)
+        Phone Validation - only numbers are accepted
+![Phone field accepts only numbers](documentation/phonefield.png)
+
+        Notes Validation - should not exceed 1000 characters
+![note field with max length 1000](documentation/notefield.png)
+
+        Successful reservation- with valid datas, reservation confirmation
+![Reservation confirmation](documentation/confimation.png)
+
+</details>
+
+<br>
+
+**View Bookings**
+
+The website gives the user the functionality to read more details about their appointments via the View my booking button on Menu page or after valid data entry received from make a reservation page it redirects to My booking history page.
+* A user must be logged in to access the My booking history page.
+* When the user clicks on the View my bookings button in the Menu page, only reservations done from the particular logged in users data will be displayed on page.
+* This consists of a Make a reservation and Go back to Homepage buttons which directs the user back to respective pages. 
+* Each reservation includes:
+  - the Name, 
+  - Number of guests
+  - the Date & Time of reservation, 
+  - The table number booked and the capacity of the table, 
+  - an Update and a Cancel button.
+* The information on the reservation changes if customer chose to update using update button and also when a reservation id deleted. View screenshots below for details. 
+* The style is consistent with the rest of the webpage and it is fully responsive.  All buttons have focus and hover effects.
+
+<details>
+
+<summary>Click to view screenshots</summary>
+
+        My booking history page
+![My booking history](documentation/bookinghistory.png)
+
+        When an existing reservation is updated
+![After updation](documentation/updatedbooking.png)
+
+        When a reservation is cancelled
+![reservation cancellation](documentation/cancellationcofirm.png)
+
+</details>
+
+<br>
+
+**Admin Panel**
+
+The website offers the business owner the functionality to view and interact with the database in the Django Admin panel.
+* The panel is reachable by typing `/admin/` at the end of the website's URL in the URL bar.
+* This brings the user to the Django Administration Login Page, where the user is asked for their Username and Password.  Only users with Superuser status has permission to login. 
+* The Superuser has permissions to add, change, delete and view everything while the user with the status of staff has only certain permissions granted by the Superuser.
+* The restaurant owner has been granted the Superuser status for now, in order to have full access of the Admin's Panel. 
+* The registered Reservation and Table models can be viewed in the Admin Interface where tables for Reservations and Tables are listed under the relevant app names. Accounts and Authentication & Authorisation list tables with information gathered through registration. 
+* The Superuser can add a Table and its capacity in the add table option
+      
+* Using the menu on the far right, the Superuser is also able to filter this reservation table by:
+
+    - Date
+    - Time
+    - User
+    - Table
+
+* The Superuser can also use search option to filter the field he wants from the reservations table 
+
+<details>
+
+<summary>Click to view screenshots</summary>
+
+        Reaching the Admin Panel
+![URL to reach the Admin panel of the website](documentation/adminpanellink.png)
+
+        Django Administration Login Page
+![Django Admin login page](documentation/djangoadmin.png)
+
+        Django Administration Interface
+![Django Admin interface](documentation/djangointerface.png)
+
+        Django Administration Interface for Reservation
+![Full Admin interface with Reservation table](documentation/reservationtable.png)
+
+        Django Administration Interface for Table
+![Full Admin interface with Table Model](documentation/tablemodel.png)
 
 </details>
 
