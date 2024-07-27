@@ -2,7 +2,7 @@
 
 Indian Curry is a full-stack, responsive website built for fictional restaurant business for education purpose only.
 
-The website consists of a Menu page, with the list of food items available and also a table reservation facility which can be accessed on user creating an account and then schedule, view, edit and delete table reservations.
+The website consists of a Menu page, with the list of food items available and also a table reservation facility which can be accessed on user creating an account and then book, view, edit and delete table reservations.
 
 ![Am I responsive image](documentation/responsiveness.png)
 
@@ -36,8 +36,7 @@ ____
 
 ## Overview
 
-Indian Curry is a responsive, mobile-first build website.  It is compatible with all current major browsers.  The website is built for educational purposes, using Bootstrap and the Django Framework. It gives users the ability to register for an account and schedule a table reservation with the 
-Restaurant. It includes role-based permissions and full CRUD functionality on reservations.
+Indian Curry is a responsive, mobile-first build website.  It is compatible with all current major browsers.  The website is built for educational purposes, using Bootstrap and the Django Framework. It gives users the ability to register for an account and reserve a table in advance. It includes role-based permissions and full CRUD functionality on reservations.
 
 [Back To Top](#table-of-contents)
 
@@ -378,6 +377,124 @@ The responsive Menu page is reachable via the Menu link in the navigation bar as
 
         Menu page on tablet/Desktop
 ![Menu page on tablet/desktop](documentation/menucontent-desktop.png)
+
+</details>
+
+<br>
+
+**Register**
+
+The website has the functionality for a user to register for an account.  
+* The fully responsive registration form can be accessed through the navigation bar or when user click on sign up link in Sign in page.  
+* At the top it also has a link to the Login form for users who have already registered for an account. The cursor changes to pointer when lands on signup. 
+* It uses django-allauth to provide all the settings for user authentication and includes the fields below.  The form was extended to also include fields for first and last name.
+
+    - Username (unique)
+    - Email (optional)
+    - Password
+    - Password repeat
+
+* The Register page's styles are consistent with the rest of the website.  The form is submitted via the Signup button at the bottom of the form. This button provides good contrast against the white background of the form and has a hover effect when cursor lands on the button.
+* When the users click on the Signup button they are directed to the Home page, on navbar you will see only logout replacing register and login links.
+
+<details>
+
+<summary>Click to view screenshots</summary>
+
+![Register Form on mob](documentation/signup-mob.png)
+
+![Register Form on Tablet/Desktop](documentation/signup-desktop.png)
+
+</details>
+
+<br>
+
+**Login**
+
+A register user can access the login form through the navigation bar or also when clicked on book a table button on Home and menu pages, view my booking button on menu page user will be redirected to signin page if not already logged in.  
+* It includes a small welcome back message and a link to the Sign up form for users who have not yet registered for an account.
+* It uses django-allauth to provide all the settings for user authentication and includes the following fields:  
+
+    - Username
+    - Password
+
+* The responsive Login page is styled in a consistent manner with the rest of the website.  The form is submitted via the sign in button at the bottom of the form. This button provides good contrast against the white background of the form and has a hover effect when mouse lands on the button.
+* When users click on the Login button they are directed to the home page.
+
+<details>
+
+<summary>Click to view screenshots</summary>
+
+![Login Form on Mob](documentation/signin-mob.png)
+
+![Login Form on Tablet/Desktop](documentation/signin-desktop.png)
+
+</details>
+
+<br>
+
+**Logout**
+
+The website has functionality for a logged in user to log out.
+* The Logout form can only be accessed from the navigation bar and only when the user is logged in.
+* It confirms with the logged in user that they want to log out.
+* Its style is consistent with the rest of the webpage and it is fully responsive.
+* The Sign Out button logs out the users and directs them back to the Home page.
+
+<details>
+
+<summary>Click to view screenshots</summary>
+
+![Logout option on navbar](documentation/logout-navbar.png)
+
+![Logout reconfirmation](documentation/reconfirmation.png)
+
+</details>
+
+<br>
+
+**Make a Reservation**
+
+The website gives the user the functionality to book/reserve a table via the book a table button on the Home and Menu pages.
+* A user must be logged in to access the Make a reservation page.
+* If a logged in user tries to book a table without filling in the reservation form, they will get a notice directing them to first fill in the form in the make a reservation page.  
+* All the fields in the form are set as required field, hence any field left blank will not allow user to book a table until it is filled.
+* The style is consistent with the rest of the webpage and it is fully responsive.
+* The Table and Time fields are dropdown fields, from which the user can select a value.
+* The Name Field accepts only alphabets and if any other character entered, a message asking user to enter only alphabets appears. 
+* The Seat Field accepts only numbers > 0, negative numbers are not accepted.
+* The Phone Field accepts only numbers, if invalid input received a error message will guide user to enter only number.
+* The Date field only accepts current and future dates upto 6 months from the current date.
+* The Time field lists the time slots according the restaurant open time and is also validated along with the Date field so that it doesn't accept double bookings.
+* The Note Field can accept a maximum of 1000 character.
+* If the information entered does not pass validation, the Submit button directs the user back to the form.  Error messages point out the fields not passed and an error alert is displayed on the bottom of each field. 
+* If the information entered passes validation, the Submit button directs the user back to the My booking history page, where they can view their existing and new booking. 
+* Each booking will have corresponding edit/update and cancel button for the user to manipulate his booking.
+
+<details>
+
+<summary>Click to view screenshots</summary>
+
+        No profile information notice with hovered on link
+![Notice for no profile information](documentation/appts-noprofile_tablet.png)
+
+        Appointment Create Page
+![Appointment Create page with form](documentation/appt-create_tablet.png)
+
+        Datefield Validation - at least 24hrs 
+![Datefield error choose a date and time at least 24hrs from now](documentation/datetime_validation.png)
+
+        Datefield Validation - only Tue - Sat
+![Datefield error open only Tuesday to Saturday](documentation/datetime_validation-sunmon.png)
+
+        DateTime Validation - already booked
+![DateTime error this slot is already booked](documentation/time_validation.png)
+
+        Appointment create - error alert
+![Error alert displayed if Appointment is not created](documentation/unsuccessful-appt_mobile.png)
+
+        Appointment create - success alert
+![Success alert displayed if Appointment is created](documentation/successful-appt_mobile.png)
 
 </details>
 

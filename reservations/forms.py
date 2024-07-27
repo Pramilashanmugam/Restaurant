@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.core.exceptions import ValidationError
 from .models import Reservation, Table
 from django.utils import timezone
-
+from datetime import timedelta
 
 def validate_phone(value):
     """
@@ -15,8 +15,8 @@ def validate_phone(value):
     """
     if not value.isdigit():
         raise ValidationError(
-              'Phone numbers can only be numbers. Please check your entry.')
-
+            'Phone numbers can only be numbers. Please check your entry.'
+        )
 
 def validate_guests(value):
     """
@@ -28,9 +28,9 @@ def validate_guests(value):
     """
     if value <= 0:
         raise ValidationError(
-              'The number of guests must be greater than zero. '
-              'Please enter a valid number.')
-
+            'The number of guests must be greater than zero. '
+            'Please enter a valid number.'
+        )
 
 def validate_name(value):
     """
@@ -45,7 +45,6 @@ def validate_name(value):
             'Name can only contain alphabetic characters. '
             'Please check your entry.'
         )
-
 
 class ReservationForm(forms.ModelForm):
     """
@@ -106,6 +105,19 @@ class ReservationForm(forms.ModelForm):
             }),
             'notes': forms.Textarea(attrs={'class': 'form-control'}),
         }
+
+    def clean_date(self):
+        """
+        Custom validation for the date field.
+        Ensures the reservation date is not on a Monday.
+        Raises:
+            ValidationError: If the reservation date is on a Monday.
+        """
+        date = self.cleaned_data.get('date')
+        if date and date.weekday() == 0:  # Monday is 0
+            raise ValidationError('Sorry we are closed on Mondays. '
+                                  'Please choose another day.')
+        return date
 
     def clean(self):
         """
