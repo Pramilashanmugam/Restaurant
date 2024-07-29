@@ -1,7 +1,7 @@
 # Table of Contents
 
 * [Code Validation](#code-validation)
-* [Lighthouse](#lighthouse-testing)
+* [Pagespeed Insight testing](#page-speed-insight-testing)
 * [Responsiveness](#responsiveness-testing)
 * [Browser Compatibility](#browser-compatibilty-testing)
 * [User Stories](#user-story-testing)
@@ -132,6 +132,34 @@ Line too long warning for line 116, 124, 127, 130, 133 was unaltered as it is Dj
 [Back To Top](#table-of-contents)
 
 _____
+
+## Page speed Insight testing
+
+[Page speed Insight](https://pagespeed.web.dev) was used to audit the website for performance, accessibility, best practice and SEO.
+
+
+<br>
+
+[Back To Top](#table-of-contents)
+
+_____
+
+## Responsiveness Testing
+
+The website is responsive for screens with a mininum width of 320px and a maximum width of 2560px. Friends and family tested the website on their devices and all reported no issues with responsiveness.  Further manual tests were done using Chrome's DevTools.
+
+<details>
+
+<summary>Screenshots of website at different screen sizes.</summary>
+
+**NAVBAR & HOME HERO**
+
+
+
+[Back To Top](#table-of-contents)
+
+_____
+
 
 ## User Story Testing
 
