@@ -29,7 +29,7 @@ HTML code was tested using the [W3C Validator](https://validator.w3.org/) via te
 
 **SIGNUP/REGISTER**
 
-![No Errors or Warnings to show](documentation/signup-htmlpagevalidator.png)
+![No Errors or Warnings to show](documentation/signup-htmlvalidator.png)
 
 **LOGIN**
 
@@ -46,6 +46,14 @@ HTML code was tested using the [W3C Validator](https://validator.w3.org/) via te
 **My booking history**
 
 ![No Errors or Warnings to show](documentation/bookinghistory-htmlpagevalidator.png)
+
+**Update page**
+
+![No Errors or Warnings to show](documentation/makeareservation-htmlpagevalidator.png)
+
+**Delete page**
+
+![No Errors or Warnings to show](documentation/delete_htmlvalidator.png)
 
 </details>
 
@@ -83,13 +91,13 @@ Python code was tested using [Code Institute's Python Linter](https://pep8ci.her
 
 <summary>Screenshots and results for all python files</summary>
 
-Long lines in `settings.py` where not cleared as input from slack members suggested we do not have to make alterations in django files.
-
 **restaurant_reservation**
 
 * settings.py
 
-![All clear, no errors found](documentation/settings file.png)
+Line too long warning for line 116, 124, 127, 130, 133 was unaltered as it is Django code and not making any alterations as advised by fellow slackmembers.
+
+![All clear, no errors found](documentation/settings_file.png)
 
 * urls.py
 
