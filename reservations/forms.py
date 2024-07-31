@@ -147,7 +147,7 @@ class ReservationForm(forms.ModelForm):
         if table and guests:
             if guests > table.capacity:
                 self.add_error('guests', f"The number of guests exceeds the "
-                               "table's capacity of {table.capacity}. "
+                               "table's capacity. "
                                "Please choose another table.")
 
         return cleaned_data
