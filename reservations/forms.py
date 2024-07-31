@@ -5,6 +5,7 @@ from .models import Reservation, Table
 from django.utils import timezone
 from datetime import timedelta
 
+
 def validate_phone(value):
     """
     Validates that the phone number contains only digits.
@@ -17,6 +18,7 @@ def validate_phone(value):
         raise ValidationError(
             'Phone numbers can only be numbers. Please check your entry.'
         )
+
 
 def validate_guests(value):
     """
@@ -32,6 +34,7 @@ def validate_guests(value):
             'Please enter a valid number.'
         )
 
+
 def validate_name(value):
     """
     Validates that the name contains only alphabetic characters.
@@ -45,6 +48,7 @@ def validate_name(value):
             'Name can only contain alphabetic characters. '
             'Please check your entry.'
         )
+
 
 class ReservationForm(forms.ModelForm):
     """
@@ -100,7 +104,7 @@ class ReservationForm(forms.ModelForm):
             ], attrs={'class': 'form-control'}),
             'date': forms.DateInput(attrs={
                 'type': 'date',
-                'min': timezone.now().date().isoformat(),
+                'min': (timezone.now() + timedelta(days=1)).date().isoformat(),
                 'class': 'form-control'
             }),
             'notes': forms.Textarea(attrs={'class': 'form-control'}),
@@ -109,14 +113,21 @@ class ReservationForm(forms.ModelForm):
     def clean_date(self):
         """
         Custom validation for the date field.
-        Ensures the reservation date is not on a Monday.
+        Ensures the reservation date is at least one day after the current date
+        and not on a Monday.
         Raises:
-            ValidationError: If the reservation date is on a Monday.
+            ValidationError: If the reservation date is within one day of
+            the current date or on a Monday.
         """
         date = self.cleaned_data.get('date')
-        if date and date.weekday() == 0:  # Monday is 0
-            raise ValidationError('Sorry we are closed on Mondays. '
-                                  'Please choose another day.')
+        if date:
+            if date.weekday() == 0:  # Monday is 0
+                raise ValidationError('Sorry we are closed on Mondays. '
+                                      'Please choose another day.')
+            if date <= timezone.now().date() + timedelta(days=1):
+                raise ValidationError('Online reservations can only be made'
+                                      ' at least 24 hours in advance. '
+                                      'Please choose another date.')
         return date
 
     def clean(self):
@@ -136,7 +147,7 @@ class ReservationForm(forms.ModelForm):
         if table and guests:
             if guests > table.capacity:
                 self.add_error('guests', f"The number of guests exceeds the "
-                               f"table's capacity of {table.capacity}. "
-                               f"Please choose another table.")
+                               "table's capacity of {table.capacity}. "
+                               "Please choose another table.")
 
         return cleaned_data

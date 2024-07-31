@@ -759,9 +759,9 @@ notes = forms.CharField(
 **Make a reservation Form Fields**
 
     * Time field validation
-    Problem: The Time field is restricted according to restaurant opening timing, currently it accepts the past time. Since the time field was initially assigned as strfield to match the restaurant timings, the validation against the current time is not accepting.
+    Problem: The Time field currently accepts the past time on current date this issue was identified during testing. Tried to fix this with a validation against the current time  however the fix was unsuccessful as the datatype for time was initially assigned as charfield. Hence this may required a complete revamp on model and may not be fixed in a short span of time. Hence came up with a temporary solution as given below and marked this issue in kanban board as bug in later stage and kept in backlogs for later action.
 
-    Status: Due to time constraints, this bug has not yet been resolved. As it is more challenging to resolve in the very short time. But still hunting for a solution to resolve the same.
+    Temporary Solution: Customer can avail online reservation not on the current day but only from next day. A new validation included in date field to accept the reservation after one day.
 
 
 [Back To Top](#table-of-contents)
