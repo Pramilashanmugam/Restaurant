@@ -1,7 +1,7 @@
 # Table of Contents
 
 * [Code Validation](#code-validation)
-* [Pagespeed Insight testing](#page-speed-insight-testing)
+* [Lighthouse](#lighthouse-testing)
 * [Responsiveness](#responsiveness-testing)
 * [Browser Compatibility](#browser-compatibilty-testing)
 * [User Stories](#user-story-testing)
@@ -133,10 +133,105 @@ Line too long warning for line 116, 124, 127, 130, 133 was unaltered as it is Dj
 
 _____
 
-## Page speed Insight testing
+## Lighthouse Testing
 
-[Page speed Insight](https://pagespeed.web.dev) was used to audit the website for performance, accessibility, best practice and SEO.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit the website for performance, accessibility, best practice and SEO.  This was run in Chrome DevTools in incognito mode. 
 
+<details>
+<summary>Screenshots and results for all pages</summary>
+
+**HOME**
+
+* Mobile
+
+![Passed](documentation/home-mob-lighthouse.png)
+
+* Desktop
+
+![Passed](documentation/home-lighthouse-desktop.png)
+
+**Menu**
+
+* Mobile
+
+![Passed](documentation/menu-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/menu-lighthouse-desktop.png)
+
+**Register**
+
+* Mobile
+
+![Passed](documentation/signup-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/signup-lighthouse-desktop.png)
+
+**Login**
+
+* Mobile
+
+![Passed](documentation/signin-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/signin-lighthouse-desktop.png)
+
+**LOGOUT**
+
+* Mobile
+
+![Passed](documentation/logout-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/logout-lighthouse-desktop.png)
+
+**Make a reservation**
+
+* Mobile
+
+![Passed](documentation/make-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/make-lighthouse-desktop.png)
+
+**My booking history**
+
+* Mobile
+
+![Passed](documentation/booking-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/booking-lighthouse-desktop.png)
+
+**update**
+
+* Mobile
+
+![Passed](documentation/booking-lighthouse-desktop.png)
+
+* Desktop
+
+![Passed](documentation/update-lighthouse-desktop.png)
+
+**delete**
+
+* Mobile
+
+![Passed](documentation/delete-lighthouse-mob.png)
+
+* Desktop
+
+![Passed](documentation/delete-lighthouse-desktop.png)
+
+
+</details>
 
 <br>
 
