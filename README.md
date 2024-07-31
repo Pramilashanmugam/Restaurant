@@ -947,6 +947,7 @@ The following walkthroughs helped me get my project in shape.  I have adapted th
 * JVL code's [Python Django Tutorial: Full-Featured Web App](https://www.youtube.com/watch?v=g5vFWHajutg&t=6263s)
 * Dee Mc's [Django Tutorial On How To Create A Recipe blog](https://tinyurl.com/mrx7jbjt) 
 * Indian Pepper Website [Inspired some designing ideas](https://www.indianpepper.de/)
+* Readme model[Inspired from Tailors_thimbel-MoniPar](https://github.com/MoniPar/tailors_thimble) 
 
 Pages I referred to a lot:
 
@@ -955,6 +956,7 @@ Pages I referred to a lot:
 * [Django Allauth](https://django-allauth.readthedocs.io/en/latest/)
 * [Google](https://www.google.de/)
 * For Documentation [ChatGPT](https://chatgpt.com/)
+
 
 Other pages, questions, fellow student's projects I found useful:
 

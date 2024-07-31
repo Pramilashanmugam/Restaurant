@@ -5,7 +5,6 @@
 * [Responsiveness](#responsiveness-testing)
 * [Browser Compatibility](#browser-compatibilty-testing)
 * [User Stories](#user-story-testing)
-* [Features](#features-testing)
 
 _____
 

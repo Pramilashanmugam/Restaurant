@@ -109,6 +109,13 @@ class Reservation(models.Model):
     notes = models.TextField()
 
     class Meta:
+        """
+    Metadata options for the model.
+
+    Attributes:
+        unique_together (tuple): Ensures that the combination of 'table',
+        'date', and 'time' is unique.
+    """
         unique_together = ('table', 'date', 'time')
 
     def __str__(self):
