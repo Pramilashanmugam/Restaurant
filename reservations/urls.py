@@ -1,4 +1,5 @@
 from django.urls import path
+from .views import CustomLoginView, CustomLogoutView
 from . import views
 
 """
@@ -28,4 +29,6 @@ urlpatterns = [
          name='update_reservation'),
     path('reservations/delete/<int:pk>/', views.delete_reservation,
          name='delete_reservation'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('logout/', CustomLogoutView.as_view(), name='logout'),
 ]

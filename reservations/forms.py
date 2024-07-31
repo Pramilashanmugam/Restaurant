@@ -126,7 +126,7 @@ class ReservationForm(forms.ModelForm):
                                       'Please choose another day.')
             if date <= timezone.now().date() + timedelta(days=1):
                 raise ValidationError('Online reservations can only be made'
-                                      ' at least 24 hours in advance. '
+                                      ' at least one day in advance. '
                                       'Please choose another date.')
         return date
 

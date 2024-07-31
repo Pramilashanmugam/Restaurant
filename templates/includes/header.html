@@ -4,10 +4,10 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <!--website Logo-->
-      <a class="navbar-brand justify-content-left" href="{% url 'home' %}"><img src="{% static 'images/logo.webp' %}"
-          alt="Indian curry restaurant logo" class="logo" style="width: 100px; height: auto;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand justify-content-left" href="{% url 'home' %}">
+        <img src="{% static 'images/logo.webp' %}" alt="Indian curry restaurant logo" class="logo" style="width: 100px; height: auto;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!--Navigation-->
@@ -21,21 +21,26 @@
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item mx-5">
-            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_logout' %}">Logout</a>
+            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
           </li>
           {% else %}
           <li class="nav-item mx-5">
-            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_signup' %}">Register</a>
+            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}">Register</a>
           </li>
           <li class="nav-item mx-5">
-            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_login' %}">Login</a>
+            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
           </li>
           {% endif %}
         </ul>
       </div>
+      <!-- Messages -->
+      {% if messages %}
+      <ul class="messages alert-success">
+          {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+      {% endif %}
     </div>
   </nav>
 </header>

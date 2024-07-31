@@ -2,9 +2,11 @@ from django.views.generic import TemplateView
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib import messages
+from django.contrib.auth import login, logout
 from .models import Reservation, Table
 from .forms import ReservationForm
-
 
 class Index(TemplateView):
     """
@@ -24,6 +26,16 @@ class Menu(TemplateView):
         template_name (str): The path to the template used to render the view.
     """
     template_name = 'reservations/menu.html'
+
+class CustomLoginView(LoginView):
+    def form_valid(self, form):
+        messages.success(self.request, "You have successfully logged in!")
+        return super().form_valid(form)
+
+class CustomLogoutView(LogoutView):
+    def dispatch(self, request, *args, **kwargs):
+        messages.success(self.request, "You have successfully logged out!")
+        return super().dispatch(request, *args, **kwargs)
 
 
 @login_required
@@ -60,6 +72,7 @@ def make_reservation(request):
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.save()
+            messages.success(request, 'Your reservation has been successfully made!')
             return redirect('reservation_list')
     else:
         form = ReservationForm()
@@ -84,6 +97,7 @@ def update_reservation(request, pk):
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Your reservation has been successfully updated!')
             return redirect('reservation_list')
     else:
         form = ReservationForm(instance=reservation)
@@ -107,6 +121,7 @@ def delete_reservation(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
     if request.method == 'POST':
         reservation.delete()
+        messages.success(request, 'Your reservation has been successfully deleted!')
         return redirect('reservation_list')
     return render(request, 'reservations/confirm_delete.html',
                   {'reservation': reservation})

@@ -33,11 +33,17 @@
 
 <body>
     <!--header elements are included-->
-    {% include 'includes/header.html' %}
-
+    
     <main>
         <div class="background">
-
+            {% include 'includes/header.html' %}
+            {% if messages %}
+            <ul class="messages alert-success">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
             {% block content %}
 
             {% endblock %}
