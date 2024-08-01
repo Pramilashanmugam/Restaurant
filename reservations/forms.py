@@ -124,7 +124,7 @@ class ReservationForm(forms.ModelForm):
             if date.weekday() == 0:  # Monday is 0
                 raise ValidationError('Sorry we are closed on Mondays. '
                                       'Please choose another day.')
-            if date <= timezone.now().date() + timedelta(days=1):
+            if date <= timezone.now().date() + timedelta(days=0):
                 raise ValidationError('Online reservations can only be made'
                                       ' at least one day in advance. '
                                       'Please choose another date.')

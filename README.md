@@ -412,7 +412,7 @@ The website has the functionality for a user to register for an account.
 **Login**
 
 A register user can access the login form through the navigation bar or also when clicked on book a table button on Home and menu pages, view my booking button on menu page user will be redirected to signin page if not already logged in.  
-* It includes a small welcome back message and a link to the Sign up form for users who have not yet registered for an account.
+* It includes a small welcome message and a link to the Sign up form for users who have not yet registered for an account.
 * It uses django-allauth to provide all the settings for user authentication and includes the following fields:  
 
     - Username
@@ -420,6 +420,7 @@ A register user can access the login form through the navigation bar or also whe
 
 * The responsive Login page is styled in a consistent manner with the rest of the website.  The form is submitted via the sign in button at the bottom of the form. This button provides good contrast against the white background of the form and has a hover effect when mouse lands on the button.
 * When users click on the Login button they are directed to the home page.
+* A message for successful login shown on Navbar.
 
 <details>
 
@@ -428,6 +429,8 @@ A register user can access the login form through the navigation bar or also whe
 ![Login Form on Mob](documentation/signin-mob.png)
 
 ![Login Form on Tablet/Desktop](documentation/signin-desktop.png)
+
+![success message on Tablet/Desktop](documentation/login-success-msg.png)
 
 </details>
 
