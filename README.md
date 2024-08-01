@@ -48,7 +48,7 @@ The plan for this project was carried out using Agile Methodology. GitHub Issues
 
 Each User Story contains Acceptance Criteria and Tasks which I sometimes had to change after I did the process, as I wasn't yet sure what needed to be done to achieve the Acceptance Criteria I aimed for.
 
-Since this was my first project using this methodology and the Django framework, some of the estimated story points were way off. In practice, a few of these tasks were completed faster than anticipated, while others took much longer. 
+Since this was my first project using this methodology and the Django framework it was quite challenging, some of the estimated user stories where clubbed together as epic in the later stage as they where related to one another. In practice, a few of these tasks were completed faster than anticipated, while others took much longer. 
 
 The [MoSCoW Method of Prioritisation](https://www.agilebusiness.org/dsdm-project-framework/moscow-prioririsation.html) was also used, classifying each User Story as a 'Must Have', 'Should Have' or 'Could Have'. Some "Won't Have's" didn't make it into the project and were left in the Backlog for a future iteration. It is important to note here, that by writing only enough User Stories to reach the Minimum Viable Product(MVP).
 
@@ -58,8 +58,11 @@ Kanban Board at this Iteration
 
 ![Kanband: Kanban board](documentation/kanbanboard.png)
 
+![Kanband: userstories and epic board](documentation/userstories-epic.png)
+
 </details>
 
+<br>
 As a whole, I found using the Agile Methodology of great benefit as it helped me to better organise the development of my project. Although I didn't give myself a specific duration for each iteration, it helped me to also manage my time better. It also felt good to move Tasks from 'to do' to  'Done' column when it was completed.
 
 [Back To Top](#table-of-contents)
@@ -86,6 +89,8 @@ This section aims to determine what a user would expect from interacting with th
 
 * As an admin, I want to view a list of all reservations so that I can manage booking schedules. [#9](https://github.com/Pramilashanmugam/Restaurant/issues/9)
 
+* As a admin/Business owner I can accept online reservations only from next day and not from current day so that i can manage the reservation efficiently. [#16](https://github.com/Pramilashanmugam/Restaurant/issues/16)
+
 
 **As a User**
 
@@ -108,6 +113,8 @@ This section aims to determine what a user would expect from interacting with th
 * As a user, I want the reservation system to be accessible on different devices (desktop, tablet, mobile) so that I can make and manage reservations conveniently. [#13](https://github.com/Pramilashanmugam/Restaurant/issues/13)
 
 * As a user, I want to see clear error messages if something goes wrong (e.g., trying to book a table that is already reserved) so that I understand what the issue is and how to resolve it. [#15](https://github.com/Pramilashanmugam/Restaurant/issues/15)
+
+* As a user, As a user I should not be allowed to book a slot on past time so that the booking can be always a valid booking.. [#17](https://github.com/Pramilashanmugam/Restaurant/issues/17)
 
 The following User Stories were added features to the website which was not included in the initial kanban board as these features were developed during the development stage which make the website run more smoothly and give the users a better experience using the website. 
 
@@ -298,6 +305,8 @@ Featured on all pages, the fully responsive header includes:
 
 </details>
 
+<br>
+
 **Footer**
 
 Featured on all pages, the responsive footer is valuable to the users as it encourages them to get in touch via phone or email if they prefer that method of contact and it also allows the users to keep connected via social media. It includes:
@@ -443,6 +452,7 @@ The website has functionality for a logged in user to log out.
 * It confirms with the logged in user that they want to log out.
 * Its style is consistent with the rest of the webpage and it is fully responsive.
 * The Sign Out button logs out the users and directs them back to the Home page.
+* A message on successful logout shown on Navbar.
 
 <details>
 
@@ -451,6 +461,8 @@ The website has functionality for a logged in user to log out.
 ![Logout option on navbar](documentation/logout-navbar.png)
 
 ![Logout reconfirmation](documentation/reconfirmation.png)
+
+![success message on Tablet/Desktop](documentation/success-logout-msg.png)
 
 </details>
 
@@ -471,7 +483,7 @@ The website gives the user the functionality to book/reserve a table via the boo
 * The Time field lists the time slots according the restaurant open time and is also validated along with the Date field so that it doesn't accept double bookings.
 * The Note Field can accept a maximum of 1000 character.
 * If the information entered does not pass validation, the Submit button directs the user back to the form.  Error messages point out the fields not passed and an error alert is displayed on the bottom of each field. 
-* If the information entered passes validation, the Submit button directs the user back to the My booking history page, where they can view their existing and new booking. 
+* If the information entered passes validation, the Submit button directs the user back to the My booking history page, where they can view their existing and new booking and a message shown on navbar on successful reservation
 * Each booking will have corresponding edit/update and cancel button for the user to manipulate his booking.
 
 <details>
@@ -483,6 +495,9 @@ The website gives the user the functionality to book/reserve a table via the boo
 
         Booking a table with valid datas
 ![Fields with valid data](documentation/valid-datas.png)
+
+        On Successful reservation, a message on navbar
+![message on navbar](documentation/makereservation-success-message.png)
 
         TableSeat validation - seat number should not be more than the capacity of the table
 ![Table Seat capacity validation](documentation/tableseat.png)
@@ -526,6 +541,7 @@ The website gives the user the functionality to read more details about their ap
   - an Update and a Cancel button.
 * The information on the reservation changes if customer chose to update using update button and also when a reservation id deleted. View screenshots below for details. 
 * The style is consistent with the rest of the webpage and it is fully responsive.  All buttons have focus and hover effects.
+* A success message on updation and cancellation will appear on the navbar.
 
 <details>
 
@@ -537,8 +553,12 @@ The website gives the user the functionality to read more details about their ap
         When an existing reservation is updated
 ![After updation](documentation/updatedbooking.png)
 
+![After updation success message](documentation/update-navbar-message.png)
+
         When a reservation is cancelled
 ![reservation cancellation](documentation/cancellationcofirm.png)
+
+![After deletion success message](documentation/cancel-navbar-message.png)
 
 </details>
 
@@ -597,6 +617,7 @@ ____
 * Add a review Section - Customer review on restaurant to be implemented, which would help in improvements.
 * Forgot/Reset password functionality
 * Confirmation of reservation/reminder to user via texts or emails.
+* A validation in booking history - The oldest booking which are no more valid against the current and future date needs to be removed from the booking history.
 
 [Back To Top](#table-of-contents)
 
@@ -672,6 +693,10 @@ Solution: This issue was shorted out by updating my Procfile with correct file n
 </details>
 <details>
 <summary>Bugs during Development</summary>
+
+Problem: Tried to use sticky-top class on navbar but on midway it stops working on menu page on mobile.
+
+Solution: Removed sticky-top class as suggested by my mentor.
 
 Problem: Phone field was not accepting all combination of number, since it was an integer field. 
 
@@ -762,10 +787,25 @@ notes = forms.CharField(
 **Make a reservation Form Fields**
 
     * Time field validation
-    Problem: The Time field currently accepts the past time on current date this issue was identified during testing. Tried to fix this with a validation against the current time  however the fix was unsuccessful as the datatype for time was initially assigned as charfield. Hence this may required a complete revamp on model and may not be fixed in a short span of time. Hence came up with a temporary solution as given below and marked this issue in kanban board as bug in later stage and kept in backlogs for later action.
+    Problem: The Time field currently accepts the past time on current date this issue was identified during testing. Tried to fix this with a validation against the current time  however the fix was unsuccessful as the datatype for time was initially assigned as charfield. Hence this may required a complete revamp on model and may not be fixed in a short span of time. Hence came up with a temporary solution as given below and marked this issue in kanban board as bug and moved to backlogs for later action.
 
-    Temporary Solution: Customer can avail online reservation not on the current day but only from next day. A new validation included in date field to accept the reservation after one day.
+    Temporary Solution: Customer can avail online reservation not on the current day but from the next day. A new validation included in date field to accept the reservation after one day.
 
+    ```
+    date = self.cleaned_data.get('date')
+        if date:
+            if date.weekday() == 0:  # Monday is 0
+                raise ValidationError('Sorry we are closed on Mondays. '
+                                      'Please choose another day.')
+            if date <= timezone.now().date() + timedelta(days=0):
+                raise ValidationError('Online reservations can only be made'
+                                      ' at least one day in advance. '
+                                      'Please choose another date.')
+        return date
+    ```
+</details>
+
+<br>
 
 [Back To Top](#table-of-contents)
 
@@ -949,8 +989,8 @@ The following walkthroughs helped me get my project in shape.  I have adapted th
 * Code Institute's "I Think Therefore I Am Blog" which is found in the CI's LMS for the Diploma in Software Development.
 * JVL code's [Python Django Tutorial: Full-Featured Web App](https://www.youtube.com/watch?v=g5vFWHajutg&t=6263s)
 * Dee Mc's [Django Tutorial On How To Create A Recipe blog](https://tinyurl.com/mrx7jbjt) 
-* Indian Pepper Website [Inspired some designing ideas](https://www.indianpepper.de/)
-* Readme model[Inspired from Tailors_thimbel-MoniPar](https://github.com/MoniPar/tailors_thimble) 
+* Indian Pepper Website [Inspired some designing ideas like reservation form](https://www.indianpepper.de/)
+* Readme model [Inspired from Tailors_thimbel-MoniPar](https://github.com/MoniPar/tailors_thimble) 
 
 Pages I referred to a lot:
 
