@@ -681,6 +681,8 @@ ____
 
 ### Bugs
 
+Known bugs are resolved or an alternative solution been identified and fixed. However there could also be unknown bugs, which was not discovered during the rigorous testings.
+
 <details>
 <summary>First Deployment Bug</summary>
 
