@@ -18,6 +18,7 @@ or classes.
 6. Delete a Reservation
     Allows the user to delete an existing reservation.
     The primary key (pk) of the reservation is required.
+7. Custom Login and Logout view
 """
 urlpatterns = [
     path('', views.Index.as_view(), name='home'),

@@ -8,6 +8,7 @@ from django.contrib.auth import login, logout
 from .models import Reservation, Table
 from .forms import ReservationForm
 
+
 class Index(TemplateView):
     """
     View for rendering the homepage.
@@ -27,12 +28,38 @@ class Menu(TemplateView):
     """
     template_name = 'reservations/menu.html'
 
+
 class CustomLoginView(LoginView):
+    """
+    Custom login view that displays a success message upon successful login.
+
+    Inherits from:
+        LoginView (django.contrib.auth.views.LoginView)
+
+    Methods:
+        form_valid(self, form):
+            Displays a success message when the form is valid and the user
+            is successfully logged in.
+    """
+
     def form_valid(self, form):
         messages.success(self.request, "You have successfully logged in!")
         return super().form_valid(form)
 
+
 class CustomLogoutView(LogoutView):
+    """
+    Custom logout view that displays a success message upon successful logout.
+
+    Inherits from:
+        LogoutView (django.contrib.auth.views.LogoutView)
+
+    Methods:
+        dispatch(self, request, *args, **kwargs):
+            Displays a success message when the user is successfully
+            logged out.
+    """
+
     def dispatch(self, request, *args, **kwargs):
         messages.success(self.request, "You have successfully logged out!")
         return super().dispatch(request, *args, **kwargs)
@@ -72,7 +99,8 @@ def make_reservation(request):
             reservation = form.save(commit=False)
             reservation.user = request.user
             reservation.save()
-            messages.success(request, 'Your reservation has been successfully made!')
+            messages.success(request,
+                             'Your reservation has been successfully made!')
             return redirect('reservation_list')
     else:
         form = ReservationForm()
@@ -97,7 +125,8 @@ def update_reservation(request, pk):
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your reservation has been successfully updated!')
+            messages.success(request,
+                             'Your reservation has been successfully updated!')
             return redirect('reservation_list')
     else:
         form = ReservationForm(instance=reservation)
@@ -121,7 +150,8 @@ def delete_reservation(request, pk):
     reservation = get_object_or_404(Reservation, pk=pk, user=request.user)
     if request.method == 'POST':
         reservation.delete()
-        messages.success(request, 'Your reservation has been successfully deleted!')
+        messages.success(request,
+                         'Your reservation has been successfully cancelled!')
         return redirect('reservation_list')
     return render(request, 'reservations/confirm_delete.html',
                   {'reservation': reservation})
