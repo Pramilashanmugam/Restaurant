@@ -240,14 +240,34 @@ _____
 
 ## Responsiveness Testing
 
-The website is responsive for screens with a mininum width of 320px and a maximum width of 2560px. Friends and family tested the website on their devices and all reported no issues with responsiveness.  Further manual tests were done using Chrome's DevTools.
+The website is responsive for screens with a mininum width of 320px and a maximum width of 2560px. Friends and family tested the website on their devices and all reported no issues with responsiveness.  Further manual tests were done using [Chrome's DevTools](https://websiteresponsivetest.com/).
 
 <details>
 
 <summary>Screenshots of website at different screen sizes.</summary>
 
-**NAVBAR & HOME HERO**
+**Responsiveness on different devices**
 
+        Mobile - Galaxy s23
+![Samsung s23](documentation/samsung-s23.png)
+
+        Mobile - Galaxy s10
+![Samsung s10](documentation/samsung-s10.png)
+
+        Mobile - iPhone 13
+![iphone13](documentation/iphone13.png)
+
+        Tablet - iPad 10 - horizontal
+![ipad 10](documentation/ipad-horizontal.png)
+ 
+        Tablet - iPad 10 - vertical
+![ipad 10](documentation/ipad-vertical.png)
+
+        Gaming/mac monitor - 1920*1080
+![Gaming and mac monitor](documentation/mac.png)
+
+<br>
+Live testing was also done on Redmi 11 note, Oppo, iphone11 mobiles and it was responsive.
 
 </details>
 
@@ -257,6 +277,42 @@ The website is responsive for screens with a mininum width of 320px and a maximu
 
 _____
 
+## Browser Compatibilty Testing
+
+Website was tested on current Chrome, Firefox, Edge, Brave for compatibility.  It was also tested on Safari on an iPad.  
+
+<details>
+
+<summary>Table of the results.</summary>
+
+| Intended      | Chrome | Firefox | Edge | Opera | Safari |
+| ------------- | ------ | ------- | ---- | ----- | -------|
+| Appearance    | Good   | Good    | Good | Good  | Good   |
+| Responsiveness| Good   | Good    | Good | Good  | Good   |
+
+
+**Responsiveness on different devices**
+
+        Chrome Browser
+![Home on mobile](documentation/chrome-browsertest.png)
+
+        Firefox Browser
+![Home on tablet](documentation/firefox.png)
+ 
+        Edge Browser
+![Home on desktop](documentation/edge-browsertest.png)
+
+        Opera Browser
+![Home on desktop](documentation/opera-browser.png)
+
+
+</details>
+
+<br>
+
+[Back To Top](#table-of-contents)
+
+_____
 
 ## User Story Testing
 
@@ -387,6 +443,9 @@ As mentioned in the Agile Methodology Section in the [README](/README.md), User 
 |            Table model           |                                                                                                   superuser can add a table with capacity                                                                                                  |                                                                                                                                **Pass** - as expected, superuser is able to add a new table and its capacity                                                                                                                               |
 |                                  |                                                                                                   superuser can delete the existing table                                                                                                  |                                                                                                                               **Pass** - as expected, superuser is able to delete existing table in the list.                                                                                                                              |
 
+
+</details>
+<br>
 
 [Back To Top](#table-of-contents)
 
