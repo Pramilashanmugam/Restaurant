@@ -213,7 +213,7 @@ _____
 
 * Mobile
 
-![Passed](documentation/booking-lighthouse-desktop.png)
+![Passed](documentation/booking-lighthouse-mob.png)
 
 * Desktop
 
