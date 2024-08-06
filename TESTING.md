@@ -1,3 +1,11 @@
+# About Manual and Automated testing:
+
+Both manual testing and automated testing play crucial roles in ensuring software quality. While manual testing excels in exploratory testing and usability testing, automated testing shines in regression, performance, and load testing. The choice between them depends on factors such as project requirements, timeline, budget, and the nature of the application being tested.
+
+I have performed only manual testing for this project, however automated testing will be considered or implemented in future.
+
+<br>
+
 # Table of Contents
 
 * [Code Validation](#code-validation)
